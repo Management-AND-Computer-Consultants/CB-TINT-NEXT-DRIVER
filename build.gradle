@@ -56,9 +56,14 @@ publishing {
             artifactId = 'nextdriver'
             version = '1.0.0'
 
-            artifact("nextdriver-1.1.aar")
-            artifact("nextdriver-service-1.1.aar")
-
+            // Assign classifiers to distinguish artifacts
+            artifact("nextdriver-1.1.aar") {
+                classifier = "library"
+            }
+            artifact("nextdriver-service-1.1.aar") {
+                classifier = "service"
+            }
+            
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
                 configurations.implementation.dependencies.each { dep ->
