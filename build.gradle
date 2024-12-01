@@ -46,6 +46,7 @@ repositories {
 
 dependencies {
     implementation(name: 'nextdriver-1.1', ext: 'aar')
+    implementation(name: 'nextdriver-service-1.1', ext: 'aar')
 }
 
 publishing {
@@ -56,6 +57,7 @@ publishing {
             version = '1.0.0'
 
             artifact("nextdriver-1.1.aar")
+            artifact("nextdriver-service-1.1.aar")
 
             pom.withXml {
                 def dependenciesNode = asNode().appendNode('dependencies')
